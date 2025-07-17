@@ -63,3 +63,5 @@ Final trained model. Accurate and production-ready. Earlier versions like `_rf` 
 📈 Predicted % Change: 2.41%
 🔮 Predicted Next Price: ₹893.30
 🟢 Signal: BUY
+& HERE'S THE OUTPUT AND PREDICTION RESULT USING MACHINE LEARNING
+<img width="1876" height="915" alt="image" src="https://github.com/user-attachments/assets/6686aca5-78d0-4ed2-8987-648071be6e69" />
