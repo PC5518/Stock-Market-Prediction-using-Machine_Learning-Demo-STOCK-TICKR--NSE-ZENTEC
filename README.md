@@ -64,4 +64,5 @@ Final trained model. Accurate and production-ready. Earlier versions like `_rf` 
 🔮 Predicted Next Price: ₹893.30
 🟢 Signal: BUY
 & HERE'S THE OUTPUT AND PREDICTION RESULT USING MACHINE LEARNING
-<img width="1876" height="915" alt="image" src="https://github.com/user-attachments/assets/6686aca5-78d0-4ed2-8987-648071be6e69" />
+<img width="1919" height="1017" alt="MODEL OUTPUT AND ACCURACY RESULT" src="https://github.com/user-attachments/assets/42fff2b9-b62e-4520-a792-3513e2787941" />
+
