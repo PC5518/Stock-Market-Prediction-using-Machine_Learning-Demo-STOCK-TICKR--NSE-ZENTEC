@@ -41,10 +41,6 @@ argparse – (Optional CLI usage) For command-line interface to pass arguments l
 ---
 ## DEMO: 
 
-## 🎥 Demo Video (Click to Watch)
-
-[![Watch the video](https://img.youtube.com/vi/xfuyAZ-8Yow/maxresdefault.jpg)](https://www.youtube.com/watch?v=xfuyAZ-8Yow)
-
 
 ## 📁 Files Explained
 
