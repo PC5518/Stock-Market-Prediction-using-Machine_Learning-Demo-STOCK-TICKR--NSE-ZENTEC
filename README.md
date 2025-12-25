@@ -43,7 +43,7 @@ $$ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 $$
 
 | File | Description |
 | :--- | :--- |
-| `zentec_stock_data.csv` | **Data Layer:** Raw OHLCV dataset fetched from NSE (2000–2025). |
+| `zentec_stock_data.csv` | **Data Layer:** Raw OHLCV dataset fetched from NSE (2014–2025). |
 | `train_zentec_percent.py` | **Training Pipeline:** Preprocessing, feature extraction, train-test splitting (80/20), and model serialization. |
 | `predict_zentec_percent.py` | **Inference Engine:** Fetches live trailing 60-day data, regenerates features, and computes next-day directional probability. |
 | `anscom_zentec_model_percent.pkl` | **Serialized Model:** The optimized Random Forest model artifact. |
