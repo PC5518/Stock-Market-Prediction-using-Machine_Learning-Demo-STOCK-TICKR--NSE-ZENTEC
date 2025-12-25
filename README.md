@@ -1,74 +1,35 @@
-# 📈 NSE: ZenTech Stock Prediction using Machine Learning
-This stock is listed ON NATIONAL STOCK EXCHANGE OF INDIA 
-A lightweight and practical machine learning project to predict **next-day percentage price changes** for Zen Technologies (ZENTEC.NS) stock using historical price trends and technical indicators.
-## Concept of this Project :
-This project explores how machine learning can be used to understand and predict stock market trends by learning from historical data. I’ve implemented and trained machine learning models to analyze price patterns and generate future predictions — combining core concepts of data science, time-series analysis, and real-world financial insights. The only key impact is that the earnings of the stock affect the market. That cannot be predicted by this code yet. basically this project used stuff like linear algebra to handle data in matrix form, statistics and probability to find patterns and analyze trends in the stock prices, calculus mainly for optimization like gradient descent to train the model, regression analysis like linear regression to actually predict the price, and time series analysis because stock data changes with time, so it looks at how things evolve day by day .(And all these things are basically built or indirectly used Or may be directly used by the Python machine learning modules like scikit-learn, etc)
-## 🚀 Key Features
+# NSE Equity Volatility & Valuation Engine
 
-- 📊 **Data Sourcing**: Automatically fetches historical stock data using Yahoo Finance.
-- 📉 **Feature Engineering**: Applies SMA, EMA, and RSI indicators via `ta` library.
-- 🧠 **Model**: Trained with RandomForestRegressor on technical features.
-- 🔮 **Live Prediction**: Uses latest 60 days of stock data to predict next-day percentage change and price.
-- ✅ **Signal Output**: Generates BUY / SELL / HOLD signals based on prediction threshold.
-## Modules used by me :
-pandas – For handling, cleaning, and manipulating the market dataset (e.g., CSV data, time-series).
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Production-brightgreen)
 
-numpy – For numerical operations like vectorized calculations, matrix operations.
+## 🏗 System Abstract
+This repository houses a **quantitative predictive modeling framework** designed to forecast short-term price volatility for NSE-listed equities (specifically *Zen Technologies*). 
 
-matplotlib / seaborn – For plotting data trends, price curves, and prediction visualizations.
+Unlike traditional price-target models, this system minimizes variance by training on **relative percentage returns** rather than absolute price values. It leverages an **Ensemble Learning architecture (Random Forest Regressor)** to detect non-linear dependencies between momentum indicators (RSI, SMA, EMA) and future price action, outputting a probabilistic **BUY/SELL/HOLD** signal based on a ±1% volatility threshold.
 
-scikit-learn – Used for:
+## 🚀 Key Technical Features
+*   **Stochastic Data Pipeline:** Automated ingestion of OHLCV market data via `yfinance` APIs, supporting both historical backtesting (2000–Present) and real-time inference.
+*   **Vectorized Feature Engineering:** utilizes `pandas` and the `ta` library to synthesize technical vectors:
+    *   **SMA (5-day):** Trend smoothing for short-term signal detection.
+    *   **EMA (10-day):** Weighted moving average to prioritize recent price action.
+    *   **RSI (14-day):** Momentum oscillator to identify overbought/oversold conditions.
+*   **Ensemble Regression:** Implements `RandomForestRegressor` (100 estimators) to mitigate overfitting common in single decision trees when applied to noisy financial time-series data.
+*   **Risk-Adjusted Decision Logic:** Generates signals only when predicted volatility exceeds a specific confidence threshold (>1%), filtering out market noise.
 
-Train-test splitting (train_test_split)
+## 📂 Repository Structure
 
-Machine learning models like LinearRegression, RandomForestRegressor, etc.
+| File | Description |
+| :--- | :--- |
+| `zentec_stock_data.csv` | **Data Layer:** Raw OHLCV dataset fetched from NSE (2000–2025). |
+| `train_zentec_percent.py` | **Training Pipeline:** preprocessing, feature extraction, train-test splitting (80/20), and model serialization. |
+| `predict_zentec_percent.py` | **Inference Engine:** Fetches live trailing 60-day data, regenerates features, and computes next-day directional probability. |
+| `anscom_zentec_model_percent.pkl` | **Serialized Model:** The optimized Random Forest model artifact. |
 
-Metrics like mean_squared_error or r2_score
+## 🛠 Usage & Installation
 
-statsmodels – (Optional) For advanced time series modeling or statistical testing (like trend significance).
-
-xgboost – (If used) For high-performance gradient boosting-based regression.
-
-yfinance / pandas_datareader – For fetching real-time or historical market data.
-
-datetime – Handling time-based data, timestamps, and feature engineering.
-
-joblib / pickle – Saving and loading trained models.
-
-tkinter / streamlit – (If GUI/web) For building a frontend/dashboard for predictions.
-
-argparse – (Optional CLI usage) For command-line interface to pass arguments like ticker name, model name, etc
----
-## DEMO: 
-## 🎥 Demo Video (Click to Watch)
-
-[![Watch the video](https://img.youtube.com/vi/xfuyAZ-8Yow/maxresdefault.jpg)](https://www.youtube.com/watch?v=xfuyAZ-8Yow)
-
-
-
-## 📁 Files Explained
-
-### 1. `zentec_stock_data.csv`
-Full historical stock data for ZenTech downloaded from Yahoo Finance.
-
-### 2. `train_zentec_percent.py`
-Trains a `RandomForestRegressor` model to predict **percentage price change** from technical indicators. Saves model to `.pkl`.
-
-### 3. `predict_zentec_percent.py`
-Loads live 60-day stock data, applies same indicators, and predicts next-day percentage change and price.
-
-### 4. `anscom_zentec_model_percent.pkl`
-Final trained model. Accurate and production-ready. Earlier versions like `_rf` were experimental.
-
----
-
-## 🧠 Example Output
-
-📆 Date: 2025-07-15
-📉 Current Price: ₹872.30
-📈 Predicted % Change: 2.41%
-🔮 Predicted Next Price: ₹893.30
-🟢 Signal: BUY
-& HERE'S THE OUTPUT AND PREDICTION RESULT USING MACHINE LEARNING
-<img width="1919" height="1017" alt="MODEL OUTPUT AND ACCURACY RESULT" src="https://github.com/user-attachments/assets/42fff2b9-b62e-4520-a792-3513e2787941" />
-
+### 1. Prerequisites
+Ensure the quantitative stack is installed:
+```bash
+pip install pandas yfinance ta scikit-learn joblib
